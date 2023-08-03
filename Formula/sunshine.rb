@@ -11,12 +11,13 @@ class Sunshine < Formula
   depends_on "boost" => :build
   depends_on "cmake" => :build
   depends_on "ffmpeg"
+  depends_on "node"
   depends_on "npm"
   depends_on "openssl@1.1"
   depends_on "opus"
 
   def install
-    system "npm", "install"
+    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
     args = %W[
       -DOPENSSL_ROOT_DIR=#{Formula["openssl"].opt_prefix}
       -DSUNSHINE_ASSETS_DIR=sunshine/assets
