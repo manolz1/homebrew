@@ -3,12 +3,9 @@ require "language/node"
 class Sunshine < Formula
   desc "Gamestream host/server for Moonlight"
   homepage "https://app.lizardbyte.dev"
-  url "https://github.com/LizardByte/Sunshine.git",
-      # is tag required? won't be available until after a release is published
-      tag:      "v0.19.1",
-      revision: "d70d084f9fbb4e0150977a89d94937418a3ccf9c"
+  url "https://github.com/LizardByte/Sunshine.git"
   license all_of: ["GPL-3.0", "BSD-3-Clause", "MIT"]
-  head "https://github.com/LizardByte/Sunshine.git"
+  head "https://github.com/LizardByte/Sunshine.git", branch: "nightly"
 
   depends_on "boost" => :build
   depends_on "cmake" => :build
@@ -32,10 +29,5 @@ class Sunshine < Formula
       system "make", "-j"
       system "make", "install"
     end
-  end
-
-  test do
-    # test that version numbers match
-    assert_match "Sunshine version: v0.19.1", shell_output("#{bin}/sunshine --version").strip
   end
 end
