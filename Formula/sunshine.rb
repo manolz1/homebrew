@@ -20,6 +20,7 @@ class Sunshine < Formula
   depends_on "opus"
 
   def install
+    system "git", "checkout", "nightly"
     system "npm", "install", *Language::Node.local_npm_install_args
     system "git", "submodule", "update", "--remote", "--init", "--recursive"
     args = %W[
