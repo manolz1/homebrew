@@ -3,12 +3,12 @@ require "language/node"
 class Sunshine < Formula
   desc "Gamestream host/server for Moonlight"
   homepage "https://app.lizardbyte.dev"
-  url "https://github.com/LizardByte/Sunshine.git"
+  url "https://git.sumsha.io/sumsha/Sunshine.git"
     # is tag required? won't be available until after a release is published
     #tag:      "v0.20.0",
     # revision: "11ebb47b3eed5ba397ecea639d137d3804f63d36"
   license all_of: ["GPL-3.0", "BSD-3-Clause", "MIT"]
-  head "https://github.com/LizardByte/Sunshine.git", branch: "nightly"
+  head "https://git.sumsha.io/sumsha/Sunshine.git", branch: "nightly"
   version "nightly"
 
   depends_on "boost" => :build
